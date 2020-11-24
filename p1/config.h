@@ -11,10 +11,10 @@
 ///===================================================================
 
 /// Filename for point coordinates
-const char* coord_filename = (char*) "data/coords-square.dat";
+const char *coord_filename = (char *)"data/coords-square.dat";
 
 /// Filename for connectivity information
-const char* conn_filename = (char*) "data/conn-square.dat";
+const char *conn_filename = (char *)"data/conn-square.dat";
 
 /// Total number of GRIDs including original mesh
 const int grids = 8;
