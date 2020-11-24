@@ -25,10 +25,12 @@ struct Coord
 
   /// Coordinates of the node/point/vertex
   double coords_[NDIM];
-  Coord(){
+  Coord()
+  {
   }
 
-  Coord(double a, double b){
+  Coord(double a, double b)
+  {
     coords_[0] = a;
     coords_[1] = b;
   }
@@ -48,22 +50,21 @@ struct Coord
 
   Coord operator-(Coord minus)
   {
-    Coord result(coords_[0]-minus[0], coords_[1]- minus[1]);
+    Coord result(coords_[0] - minus[0], coords_[1] - minus[1]);
     return result;
   }
 
   Coord operator+(Coord plus)
   {
-    Coord result(coords_[0]+ plus[0], coords_[1] + plus[1]);
+    Coord result(coords_[0] + plus[0], coords_[1] + plus[1]);
     return result;
   }
 
   Coord operator*(double d)
   {
-    Coord result(coords_[0]*d, coords_[1]*d);
+    Coord result(coords_[0] * d, coords_[1] * d);
     return result;
   }
-
 };
 
 /// @brief Structure for a triangle in GRID
@@ -77,11 +78,12 @@ struct Triangle
   /// Array for the three vertices; entries have to be ordered in counter-
   /// clockwise order
   int vertices_[NODES_PER_TRIANGLE];
-  Triangle(){
-
+  Triangle()
+  {
   }
 
-  Triangle(int a, int b, int c){
+  Triangle(int a, int b, int c)
+  {
     vertices_[0] = a;
     vertices_[1] = b;
     vertices_[2] = c;
@@ -182,7 +184,8 @@ public:
   /// i.e. its number is num_triangles() (before insertion) + 1
   void add_triangle(Triangle &new_tri)
   {
-    for( int v = 0; v < NODES_PER_TRIANGLE; v++){
+    for (int v = 0; v < NODES_PER_TRIANGLE; v++)
+    {
       assert(new_tri[v] < static_cast<int>(coords_.size()));
     }
     conn_.push_back(new_tri);
@@ -199,14 +202,16 @@ public:
   int edge_id(int v_start_id, int v_end_id)
   {
     //x * y + trunc((|x - y| - 1)^2 / 4)
+    // https://gist.github.com/ma11hew28/9457506
     v_start_id++;
     v_end_id++;
-    if (v_start_id < v_end_id){
-      return v_start_id*v_end_id + pow(v_end_id - v_start_id - 1,2)/4;
+    if (v_start_id < v_end_id)
+    {
+      return v_start_id * v_end_id + pow(v_end_id - v_start_id - 1, 2) / 4;
     }
     else
     {
-      return v_start_id*v_end_id + pow(v_start_id - v_end_id - 1,2)/4;
+      return v_start_id * v_end_id + pow(v_start_id - v_end_id - 1, 2) / 4;
     }
   }
 
@@ -243,8 +248,6 @@ public:
       std::cout << "\t" << i << ": (" << conn_[i][0] << ", " << conn_[i][1] << ", " << conn_[i][2] << ")" << std::endl;
     }
   }
-
-
 };
 
 /*****************************************************************************/
