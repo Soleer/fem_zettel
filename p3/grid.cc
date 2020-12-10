@@ -289,7 +289,7 @@ void GRID::compute_boundary_flag() {
       t_count[t[i]]++; 
     }
   }
-  // if a node is in one or three triangles, it must be on the border
+  // if a node is in one, two or three triangles, it must be on the border, else it is not.
   for(int i=0; i<num_nodes(); i++){
     boundary_flag_[i] = t_count[i] <= 3;
   }
@@ -300,6 +300,7 @@ void GRID::compute_dirichlet_nodes_and_values(void (*function_to_call)(GRID&, co
                                         std::vector<int> &dirichlet_nodes,
                                         std::vector<double> &dirichlet_val)
 {
+  // according to task b
   Triangle t;
   int a, b;
   std::vector<int> bd_pts(2);
@@ -318,6 +319,7 @@ void GRID::compute_dirichlet_nodes_and_values(void (*function_to_call)(GRID&, co
         bd_pts[1] = b;
         (*function_to_call)(*this, bd_pts, bd_vals);
         if(bd_vals.size()==2){
+          // vec entrys must be unique
           if(!is_already[a]){
             dirichlet_nodes.push_back(a);
             dirichlet_val.push_back(bd_vals[0]);
