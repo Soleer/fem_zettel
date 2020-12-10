@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1">
+<Collection>
+<DataSet timestep="0.000000e+00" group="" part="0" file="test_0.vtu"/>
+<DataSet timestep="1.000000e+00" group="" part="0" file="test_1.vtu"/>
+<DataSet timestep="2.000000e+00" group="" part="0" file="test_2.vtu"/>
+<DataSet timestep="3.000000e+00" group="" part="0" file="test_3.vtu"/>
+<DataSet timestep="4.000000e+00" group="" part="0" file="test_4.vtu"/>
+<DataSet timestep="5.000000e+00" group="" part="0" file="test_5.vtu"/>
+<DataSet timestep="6.000000e+00" group="" part="0" file="test_6.vtu"/>
+<DataSet timestep="7.000000e+00" group="" part="0" file="test_7.vtu"/>
+</Collection>
+</VTKFile>

@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<VTKFile type="UnstructuredGrid" version="0.1">
+	<UnstructuredGrid>
+		<Piece NumberOfPoints="4" NumberOfCells="2">
+			<PointData Scalars="Boundary flag">
+				<DataArray Name="Boundary flag" type="Float64" format="ascii">
+					1.000000
+					1.000000
+					1.000000
+					1.000000
+				</DataArray>
+				<DataArray Name="Dirichlet BC" type="Float64" format="ascii">
+					0.000000
+					0.540302
+					0.291927
+					0.540302
+				</DataArray>
+			</PointData>
+			<CellData />
+			<Points>
+				<DataArray type="Float64" Name="Array" NumberOfComponents="3" format="ascii">
+					0.000000 0.000000 0.000000 
+					1.000000 0.000000 0.000000 
+					1.000000 1.000000 0.000000 
+					0.000000 1.000000 0.000000 
+				</DataArray>
+			</Points>
+			<Cells>
+				<DataArray type="Int64" Name="connectivity" format="ascii">
+					0 1 2 
+					0 2 3 
+				</DataArray>
+				<DataArray type="Int64" Name="offsets" format="ascii">
+					3 
+					6 
+				</DataArray>
+				<DataArray type="UInt8" Name="types" format="ascii">
+					5 
+					5 
+				</DataArray>
+			</Cells>
+		</Piece>
+	</UnstructuredGrid>
+</VTKFile>
